@@ -1,0 +1,79 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.18'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.simple'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.1'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    //시큐리티 타임리프에서 사용
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+    //시큐리티 테스트
+    testImplementation 'org.springframework.security:spring-security-test'
+    //타임리프 레이아웃
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.4.0'
+    implementation 'com.auth0:java-jwt:4.4.0'
+
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    implementation 'net.nurigo:sdk:4.2.7'
+
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+//aws SDK
+//implementation 'software.amazon.awssdk:aws-sdk-java:2.20.43'
+    implementation platform("software.amazon.awssdk:bom:2.20.43")
+    implementation "software.amazon.awssdk:s3"
+//implementation "software.amazon.awssdk:lambda"
+//implementation "software.amazon.awssdk:sesv2"
+//implementation "software.amazon.awssdk:sns"
+//implementation "software.amazon.awssdk:sqs"
+
+//implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+//portOne
+//    implementation 'com.github.iamport:iamport-rest-client-java:0.2.21'
+//potyOne need Reservation system
+    implementation "com.google.cloud:google-cloud-bigquery:2.11.0"
+
+    testImplementation("org.junit.platform:junit-platform-launcher:1.5.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.5.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.5.2")
+}
+
+
+
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
