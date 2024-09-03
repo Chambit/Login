@@ -32,7 +32,7 @@ public class CustomLoginFilter extends UsernamePasswordAuthenticationFilter {
     throws AuthenticationException {
         System.out.println("=======attemtAuthentication=======");
 
-        //1. /login요청으로 들어오는 username userpassword의 폼 형식 로그인데이터를 얻는다
+        //1. login요청으로 들어오는 username userpassword의 폼 형식 로그인데이터를 얻는다
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
