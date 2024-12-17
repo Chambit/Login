@@ -1,5 +1,4 @@
-package user.jwt.util;
-
+package com.project.jwt.util;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;

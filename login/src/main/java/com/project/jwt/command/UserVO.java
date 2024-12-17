@@ -1,4 +1,4 @@
-package command;
+package com.project.jwt.command;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
